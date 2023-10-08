@@ -11,8 +11,11 @@
         div.columns{display: flex; gap: min(4vw, 1.5em);}
         div.column{flex: auto; overflow-x: auto;}
         div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-        ul.task-list{list-style: none;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
         ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
           width: 0.8em;
           margin: 0 0.8em 0.2em -1.6em;
           vertical-align: middle;
@@ -163,22 +166,27 @@ Classroom</a></li>
             them default values.</p>
             <p>For example, the constructor definition could be:</p>
             <div class="sourceCode" id="cb2"><pre
-            class="sourceCode php"><code class="sourceCode php"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">function</span> <span class="bu">__construct</span>(<span class="dt">array</span> <span class="va">$contactArray</span> <span class="op">=</span> <span class="dt">array</span>(<span class="st">&quot;id&quot;</span>=&gt; <span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;title&quot;</span>=&gt; <span class="st">&quot;Mr.&quot;</span><span class="ot">,</span> <span class="st">&quot;name&quot;</span>=&gt; <span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;surname&quot;</span>=&gt; <span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;birthdate&quot;</span>=&gt;<span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;phone&quot;</span>=&gt;<span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;email&quot;</span>=&gt;<span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;favourite&quot;</span>=&gt;<span class="kw">false</span><span class="ot">,</span> <span class="st">&quot;important&quot;</span>=&gt;<span class="kw">false</span><span class="ot">,</span> <span class="st">&quot;archived&quot;</span>=&gt;<span class="kw">false</span>))</span></code></pre></div>
+            class="sourceCode php"><code class="sourceCode php"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">function</span> <span class="bu">__construct</span>(<span class="dt">array</span> <span class="va">$contactArray</span> <span class="op">=</span> <span class="dt">array</span>(<span class="st">&quot;id&quot;</span>=&gt; <span class="dv">0</span><span class="ot">,</span> <span class="st">&quot;title&quot;</span>=&gt; <span class="st">&quot;Mr.&quot;</span><span class="ot">,</span> <span class="st">&quot;name&quot;</span>=&gt; <span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;surname&quot;</span>=&gt; <span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;birthdate&quot;</span>=&gt;<span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;phone&quot;</span>=&gt;<span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;email&quot;</span>=&gt;<span class="st">&quot;&quot;</span><span class="ot">,</span> <span class="st">&quot;favourite&quot;</span>=&gt;<span class="kw">false</span><span class="ot">,</span> <span class="st">&quot;important&quot;</span>=&gt;<span class="kw">false</span><span class="ot">,</span> <span class="st">&quot;archived&quot;</span>=&gt;<span class="kw">false</span>))</span></code></pre></div>
             <p>Override the method
             <strong><code>__toString()</code></strong>, to return a
             string with all the data of the object, formatted
             properly.</p>
+            <p>Modify your <code>contact_form.php</code> script to work
+            with this class.</p>
+            <h2 data-number="1.2" id="exercise-2"><span
+            class="header-section-number">1.2</span> Exercise 2</h2>
             <p>Move the functions <code>checkContactDate</code> and
             <code>checkBirthday</code> from the file
-            <code>functions.php</code> from the Unit 3 to the class as
-            methods. Their signatures should be:</p>
+            <code>functions.php</code> from the Unit 3 to the class.
+            They will become class methods. Their signatures should
+            be:</p>
             <ul>
             <li><strong><code>checkContactDate() : bool</code></strong></li>
             <li><strong><code>checkBirthday() : ?int</code></strong></li>
             </ul>
-            <p>Modify your <code>contact_form.php</code> script to work
-            with this class for, in addition to the previous validations
-            and functionality, doing the next with the methods:</p>
+            <p>In addition to the previous validations and
+            functionality, do the next validations with these
+            methods:</p>
             <ul>
             <li><p>Use the <code>checkContactDate</code> function to
             check the validity of the date in the
@@ -198,38 +206,6 @@ Classroom</a></li>
             birthday.</em></li>
             </ul></li>
             </ul>
-            <h2 data-number="1.2" id="exercise-2"><span
-            class="header-section-number">1.2</span> Exercise 2</h2>
-            <p>Make a class, named
-            <strong><code>ContactList</code></strong>. This class must
-            store a list of contacts of the <strong>Contact</strong>
-            class. The class must have the next properties:</p>
-            <ul>
-            <li>$contactList (array of Contact objects).</li>
-            </ul>
-            <p>Create the public methods:</p>
-            <ul>
-            <li><strong><code>getContactList(): array</code></strong>:
-            returns an array of Contact objects.</li>
-            <li><strong><code>addContact(Contact $contact): void</code></strong>:
-            adds a Contact object to the Contact list.</li>
-            <li><strong><code>addContactList(array $contacts): void</code></strong>:
-            adds an array of Contact objects to the Contact list,</li>
-            <li><strong><code>getContactById(int $id): ?Contact</code></strong>:
-            returns a Contact from the Contact list by its id. If not
-            found, must return a <strong><code>null</code></strong>
-            value (the ? before the return type means that it must be of
-            type Contact or null).</li>
-            </ul>
-            <p>These methods must be <strong>strictly
-            typed</strong>.</p>
-            <p>Modify your <code>contact_list.php</code> script to work
-            with the classes <code>Contact</code> and
-            <code>ContactList</code>. Instead of handling the array
-            <code>$contacts</code> from the <code>data.php</code> file,
-            delete the file and create a <code>ContactList</code> object
-            with all the elements from the array and retrieve all the
-            contacts from it using its public methods.</p>
             <h2 data-number="1.3"
             id="how-to-submit-to-github-classroom"><span
             class="header-section-number">1.3</span> How to submit to
@@ -239,9 +215,17 @@ Classroom</a></li>
             the previous one (Practice 4.1). Remember to make a new
             branch before start the practice.</li>
             <li>Once you finish the task, make a commit with the comment
-            “PRACTICE 5.1 SUBMISSION COMMIT” and push it to GitHub.
-            Before that, you can do the commits and pushes you want. If
-            you change your code after your submission commit, make
+            “PRACTICE 5.1 SUBMISSION COMMIT”, merge the branch into the
+            main branch, and push it to GitHub. For example:</li>
+            </ol>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;PRACTICE 5.1 SUBMISSION COMMIT&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge contacts-u5</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div>
+            <ol start="3" type="1">
+            <li>Before that, you can do the commits and pushes you want.
+            If you change your code after your submission commit, make
             another commit and push with the same text in the message
             adding the corrections you’ve done.Make a pull-request if
             you want so i could know your code is submitted.</li>
