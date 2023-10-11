@@ -11,11 +11,8 @@
         div.columns{display: flex; gap: min(4vw, 1.5em);}
         div.column{flex: auto; overflow-x: auto;}
         div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-        /* The extra [class] is a hack that increases specificity enough to
-           override a similar rule in reveal.js */
-        ul.task-list[class]{list-style: none;}
+        ul.task-list{list-style: none;}
         ul.task-list li input[type="checkbox"] {
-          font-size: inherit;
           width: 0.8em;
           margin: 0 0.8em 0.2em -1.6em;
           vertical-align: middle;
@@ -121,6 +118,12 @@ Classroom</a></li>
             this <strong><code>header()</code></strong> and
             <strong>session variables</strong>.</p>
             <blockquote>
+            <p><strong>Note</strong>: <strong>All the validation must be
+            done in PHP</strong>, so don’t use the <code>required</code>
+            HTML attribute or the types <code>phone</code> and
+            <code>email</code> on the form inputs.</p>
+            </blockquote>
+            <blockquote>
             <p><strong>Important</strong>: If you are programming in
             Windows, make sure <strong>all the folders and files are
             written in lowercase</strong>, to prevent errors in Linux
@@ -147,8 +150,8 @@ Classroom</a></li>
             validations.</p>
             <p>In the <code>contact_list.php</code> page, make a button
             with the text “Create new contact”. When pressed, it will
-            open the <code>contact.php</code> form without data in the
-            inputs (only the default value for <em>title</em>).</p>
+            open the <code>contact_form.php</code> form without data in
+            the inputs (only the default value for <em>title</em>).</p>
             <p>Optionally, if the form has been opened from the contact
             list, disable the “Save” button (attribute
             <code>disabled</code>). If the form has been opened directly
