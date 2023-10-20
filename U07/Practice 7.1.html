@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="generator" content="pandoc" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />        <title>Unit 07. Practice 7.2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />        <title>Unit 07. Practice 7.1</title>
     <style>
         code{white-space: pre-wrap;}
         span.smallcaps{font-variant: small-caps;}
@@ -92,100 +92,123 @@
 <body>
     <div id="content">
                  <header id="title-block-header">
-            <h1 class="title">Unit 07. Practice 7.2</h1>
+            <h1 class="title">Unit 07. Practice 7.1</h1>
             <!---->
             <!--  -->
                     </header>
                  <nav id="TOC" role="doc-toc">
             <div class="navContainer">
                  <ul>
-<li><a href="#practice-7.2.-voluntary"
-id="toc-practice-7.2.-voluntary"><span
-class="toc-section-number">1</span> Practice 7.2. Voluntary</a>
+<li><a href="#practice-7.1.-files-and-cookies"
+id="toc-practice-7.1.-files-and-cookies"><span
+class="toc-section-number">1</span> Practice 7.1. Files and cookies</a>
 <ul>
 <li><a href="#exercise-1" id="toc-exercise-1"><span
 class="toc-section-number">1.1</span> Exercise 1</a></li>
 <li><a href="#exercise-2" id="toc-exercise-2"><span
 class="toc-section-number">1.2</span> Exercise 2</a></li>
+<li><a href="#exercise-3" id="toc-exercise-3"><span
+class="toc-section-number">1.3</span> Exercise 3</a></li>
 <li><a href="#how-to-submit-to-github-classroom"
 id="toc-how-to-submit-to-github-classroom"><span
-class="toc-section-number">1.3</span> How to submit to GitHub
+class="toc-section-number">1.4</span> How to submit to GitHub
 Classroom</a></li>
 </ul></li>
 </ul>
             </div>
         </nav>
                 <main>
-            <h1 data-number="1" id="practice-7.2.-voluntary"><span
-            class="header-section-number">1</span> Practice 7.2.
-            Voluntary</h1>
+            <h1 data-number="1"
+            id="practice-7.1.-files-and-cookies"><span
+            class="header-section-number">1</span> Practice 7.1. Files
+            and cookies</h1>
             <blockquote>
-            <p>This practice is the last in the series of practices
+            <p>This practice is the next in the series of practices
             consisting of a Contacts application. This practice is based
-            on the previous one (7.1). Before start it, finish the
-            previous one, make the corrections you consider, if needed,
-            and start coding.</p>
-            <p>The mark of this practice <strong>can increase the mark
-            of the first evaluation by 0.5 points</strong>, provided
-            that the marks of the practice part and the exam are at
-            least 5. The note that increases each exercise is indicated
-            on it.</p>
+            on the previous one. Before start it, finish the previous
+            one, make the corrections you consider, if needed, and start
+            coding.</p>
             <p>The inclusion of comments in the scripts will be
             valued.</p>
             <p>Before start, create a new git branch named
-            <code>contacts-u7.2</code> and change to it:</p>
+            <code>contacts-u7</code> and change to it:</p>
             <div class="sourceCode" id="cb1"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch contacts-u7.2</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout contacts-u7.2</span></code></pre></div>
-            <p>Do all the practice in the <code>contacts-u7.2</code>
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch contacts-u7</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout contacts-u7</span></code></pre></div>
+            <p>Do all the practice in the <code>contacts-u7</code>
             branch. Once finished, do the submission via GitHub
             Classroom as detailed in the end of the practice.</p>
             </blockquote>
             <h2 data-number="1.1" id="exercise-1"><span
             class="header-section-number">1.1</span> Exercise 1</h2>
-            <p><strong>(+0,2 points)</strong></p>
-            <p>In <code>import_export.php</code>, a button for
-            downloading all the database contacts (all the fields) in a
-            <strong>CSV</strong> file. The file must be downloaded
+            <p>Create a new page, named <code>import_export.php</code>,
+            with a form and a button for downloading all the database
+            contacts (all the fields) in a JSON file, with the
+            <code>.json</code> extension. The file must be downloaded
             automatically once the button is pressed.</p>
-            <p>Also, add an input of type file and another button to
-            upload a CSV file and insert it in the database.</p>
-            <p>The file must have all the fields of a Contact object in
-            the same order, without header.</p>
+            <p>The json file must be well formed and must contain a main
+            array named <code>'Contacts'</code> with all the contacts.
+            For example:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;Contacts&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Mr.&quot;</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Mike&quot;</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;surname&quot;</span><span class="fu">:</span> <span class="st">&quot;Molina&quot;</span><span class="fu">,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;birthDate&quot;</span><span class="fu">:</span> <span class="st">&quot;1975-10-21&quot;</span><span class="fu">,</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;phone&quot;</span><span class="fu">:</span> <span class="st">&quot;555445466&quot;</span><span class="fu">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;molina@mail.com&quot;</span><span class="fu">,</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;favourite&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;important&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;archived&quot;</span><span class="fu">:</span> <span class="kw">true</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="er">...</span></span></code></pre></div>
+            <blockquote>
+            <p><strong>Recommendation</strong>: Create a directory with
+            write permissions in order to store your files.</p>
+            </blockquote>
+            <p>Create a partial script with a navigation bar to navigate
+            between this page and the rest of the app pages,
+            <code>contact_list</code> and <code>contact_form</code>.</p>
             <h2 data-number="1.2" id="exercise-2"><span
             class="header-section-number">1.2</span> Exercise 2</h2>
-            <p><strong>(+0,3 points)</strong></p>
-            <p>Make a new functionality to add images to each contact,
-            storing them in the database. Add a field in the contact
-            table of the database with the next properties:</p>
-            <div class="sourceCode" id="cb2"><pre
-            class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">+</span><span class="co">----------+--------------+------+-----+---------+----------------+</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>| Field    | <span class="kw">Type</span>         | <span class="kw">Null</span> | <span class="kw">Key</span> | <span class="kw">Default</span> | Extra          |</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">+</span><span class="co">----------+--------------+------+-----+---------+----------------+</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">..</span>.</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>| image    | longblob     | YES  |     | <span class="kw">NULL</span>    |                |</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">+</span><span class="co">----------+--------------+------+-----+---------+----------------+</span></span></code></pre></div>
-            <p>The image must be shown properly in the
-            <code>contact_form</code> view, only if the contact has an
-            image stored. The image must be uploaded in the form.</p>
-            <p>Establish the next limitations: file types: jpg, jpeg,
-            png, gif; size limit 5MB.</p>
-            <h2 data-number="1.3"
+            <p>In <code>import_export.php</code>, add an input of type
+            file and another button to upload a JSON file and insert it
+            in the database. The json file must be well formed and must
+            contain a main array named <code>'Contacts'</code>, like in
+            the previous example. The file must have the
+            <code>.json</code> extension.</p>
+            <h2 data-number="1.3" id="exercise-3"><span
+            class="header-section-number">1.3</span> Exercise 3</h2>
+            <p>In <code>import_export.php</code>, add a
+            <code>&lt;select&gt;</code> input with a list of 3-4
+            languages. When the user chooses a language, the script must
+            store a cookie with the chosen language that will expire en
+            10 days.</p>
+            <p>In all your pages, read the language cookie and display a
+            message according to its content (for instance “Your
+            language is English”). You can display the message in the
+            header, navigation bar or footer parts.</p>
+            <h2 data-number="1.4"
             id="how-to-submit-to-github-classroom"><span
-            class="header-section-number">1.3</span> How to submit to
+            class="header-section-number">1.4</span> How to submit to
             GitHub Classroom</h2>
             <ol type="1">
             <li>This task must be submitted to the same repository of
-            the Practice 4.1. Remember to make a new branch before
+            the previous one. Remember to make a new branch before
             starting the practice.</li>
             <li>Once you finish the task, make a commit with the comment
-            “PRACTICE 7.2 SUBMISSION COMMIT”, merge the branch into the
+            “PRACTICE 6.1 SUBMISSION COMMIT”, merge the branch into the
             main branch, and push it to GitHub. For example:</li>
             </ol>
             <div class="sourceCode" id="cb3"><pre
-            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;PRACTICE 7.2 SUBMISSION COMMIT&quot;</span></span>
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;PRACTICE 7.1 SUBMISSION COMMIT&quot;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge contacts-u7.2</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge contacts-u7</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div>
             <ol start="3" type="1">
             <li>Before that, you can do the commits and pushes you want.
@@ -194,9 +217,8 @@ Classroom</a></li>
             adding the corrections you’ve done. Make a pull-request if
             you want so i could know your code is submitted.</li>
             <li>Once pushed to GitHub, create a tag with the name
-            “Practice 7.2”. Create a new tag if you make corrections
-            after the first submission (ex. “Practice 7.2
-            corrected”).</li>
+            “Practice 7”. Create a new tag if you make corrections after
+            the first submission (ex. “Practice 7 corrected”).</li>
             </ol>
             <p>If you have any doubt in your task, you can push your
             code and ask me by email what’s your problem.</p>
