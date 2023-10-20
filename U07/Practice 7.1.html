@@ -11,8 +11,16 @@
         div.columns{display: flex; gap: min(4vw, 1.5em);}
         div.column{flex: auto; overflow-x: auto;}
         div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+<<<<<<< HEAD
         ul.task-list{list-style: none;}
         ul.task-list li input[type="checkbox"] {
+=======
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+>>>>>>> refs/remotes/origin/main
           width: 0.8em;
           margin: 0 0.8em 0.2em -1.6em;
           vertical-align: middle;
@@ -214,7 +222,11 @@ Classroom</a></li>
             <li>Before that, you can do the commits and pushes you want.
             If you change your code after your submission commit, make
             another commit and push with the same text in the message
+<<<<<<< HEAD
             adding the corrections you’ve done. Make a pull-request if
+=======
+            adding the corrections you’ve done.Make a pull-request if
+>>>>>>> refs/remotes/origin/main
             you want so i could know your code is submitted.</li>
             <li>Once pushed to GitHub, create a tag with the name
             “Practice 7”. Create a new tag if you make corrections after
