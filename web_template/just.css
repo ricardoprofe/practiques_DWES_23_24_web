@@ -11,7 +11,7 @@ body {
     background-color: #ffffff;
     padding: 0;
     text-align: justify;
-    font-family: "Lato", Trebuchet MS, Arial, Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #192150;
     background-color: #ffffff;
     /*  FLEX * /
@@ -25,7 +25,7 @@ body {
     font-optical-sizing: auto;
     font-variant-alternates: normal;
     font-variant-east-asian: normal;
-    font-variant-emoji: ;
+    font-variant-emoji: normal;
     font-variant-ligatures: normal;
     font-variant-numeric: normal;
     font-variant-position: normal;
@@ -49,51 +49,23 @@ h1 {
     text-align: left;
     font-size: 23px;
     margin-top: 0px;
-    color: #1e9d8b;
+    color: #653097;
     font-family: 'Lato';
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 15px;
-    border-bottom: 3px solid #1e9d8b;
+    border-bottom: 3px solid #653097;
 }
 
 h2 {
     text-align: left;
     margin-top: 0px;
-    color: #1e9d8b;
+    color: #653097;
     font-family: 'Lato';
     font-weight: 600;
+    text-transform: capitalize;
     margin-bottom: 15px;
 }
-
-code {
-    color:#b71c1c;
-}
-
-/* Taules */
-
-table {
-    /*font-family: Arial, Helvetica, sans-serif;*/
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even){background-color: #f2f2f2;}
-  
-  tr:hover {background-color: #ddd;}
-  
-  th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #1e9d8b;
-    color: white;
-  }
 
 
 /* Barra de navegació superior */
@@ -122,14 +94,14 @@ header {
     flex: 0 1 100%;
     padding: 1em;
     /********/
-    background-color: #d5e7e630;
+    background-color: #65309741;
     border-bottom: 1px solid #98c8c5;
     margin: -.5em 0 1em 0;
     margin-top: -0.5em;
     font-size: 1em;
     text-align: left;
     font-size: 3px;
-    color: #1e9d8b;
+    color: #653097;
     font-family: 'Lato';
 }
 
@@ -155,15 +127,22 @@ main {
     padding: 1em;
 }
 
+
+
 #mySidenav>.navContainer>a {
-    margin-left: 1.5em;
+    padding: 0.5em 0.5em 0.5em 2em;
     text-indent: -1.5em;
     display: block;
-    color: #1e9d8b;
+    color: #653097;
+    background-color: #65309741;
+    margin-bottom: 0.2em;
+}
+    
+    
 }
 
 .navContainer>h3>a {
-    color: #1e9d8b;
+    color: #653097;
     text-align: left !important;
     display: block;
 }
@@ -186,8 +165,8 @@ nav#TOC ul {
 nav#TOC ul li a {
     /*margin: 1px;
     padding: 0px;*/
-    background-color: #d5e7e6;
-    color: #071133;
+    background-color: #653097;
+    color: #ffffff;
     border-color: #ffffff;
     display: block;
     padding: 8px 10px 8px 20px;
@@ -196,7 +175,7 @@ nav#TOC ul li a {
 }
 
 .navItemSelected {
-    border-left: 5px solid #98c8c5 !important;
+    border-left: 5px solid #ffffff !important;
     /*text-decoration: underline;*/
     font-weight: bold;
 }
@@ -206,16 +185,10 @@ a:visited {
     text-decoration: none;
 }
 
-a:hover {
-    color:#1e9d8b;
-}
-
 .navContainer {
     top: 0px;
     left: 0px;
     position: sticky;
-    overflow-y: auto;
-    height: 600px;
 }
 
 .drawer-close-button {
@@ -229,7 +202,7 @@ a:hover {
 img {
     margin: auto;
     display: block;
-    max-width: 100%;
+    max-width:100%;
 }
 
 figcaption {
@@ -315,7 +288,7 @@ img.modal-content {
     max-width: 700px;
     text-align: center;
     color: #192150;
-    background-color: #d5e7e6;
+    /*background-color: #ffcc00;*/
     padding: 10px 0;
     height: 50px;
 }
@@ -517,8 +490,8 @@ h2.siteTitle {
 }
 
 .card-content p.practica {
-    color: #1e9d8b;
-    border-color: #1e9d8b;
+    color: #653097;
+    border-color: #653097;
 }
 
 .card-content p.tutorial {
@@ -609,11 +582,7 @@ div.siteIndex {
     }
 }
 
-blockquote {
-    background-color:#d5e7e6;
-    padding: 16px;
-    border-left: 5px solid #1e9d8b;
-}
+
 
 /* Snackbars */
 
@@ -621,7 +590,7 @@ blockquote {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
     margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: #1e9d8b; /* Black background color */
+    background-color: #7d32cd; /* Black background color */
     color: #ffffff; /* White text color */
     text-align: center; /* Centered text */
     border-radius: 2px; /* Rounded borders */
@@ -631,7 +600,7 @@ blockquote {
     left: 50%; /* Center the snackbar */
     bottom: 30px; /* 30px from the bottom */
   }
-
+  
   /* Show the snackbar when clicking on a button (class added with JavaScript) */
   #snackbar.show {
     visibility: visible; /* Show the snackbar */
@@ -640,23 +609,23 @@ blockquote {
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
   }
-
+  
   /* Animations to fade the snackbar in and out */
   @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
   }
-
+  
   @keyframes fadein {
     from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
   }
-
+  
   @-webkit-keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
   }
-
+  
   @keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
